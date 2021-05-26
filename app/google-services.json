@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "323643757399",
+    "project_id": "music-player-1685f",
+    "storage_bucket": "music-player-1685f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323643757399:android:c5377aa5979b008f646412",
+        "android_client_info": {
+          "package_name": "com.example.musicplayee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323643757399-t9fg4h2l1kn0dt01afg65ogutljiejpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOabVdv91S_iHWFbVcsO7pAzDu15DGVJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323643757399-t9fg4h2l1kn0dt01afg65ogutljiejpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

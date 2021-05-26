@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.musicplayee.view.JcPlayerView">
+
+    <TextView
+        android:id="@+id/txtCurrentMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_normal"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxLines="2"
+        android:scrollHorizontally="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_large"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Some music awesome music name..."
+        tools:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/txtCurrentDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:gravity="center_horizontal"
+        android:text="@string/play_initial_time"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCurrentMusic"
+        app:layout_goneMarginTop="@dimen/spacing_large" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal"
+        app:layout_constraintEnd_toStartOf="@id/txtDuration"
+        app:layout_constraintStart_toEndOf="@id/txtCurrentDuration"
+        app:layout_constraintTop_toBottomOf="@+id/txtCurrentMusic"
+        app:layout_goneMarginTop="@dimen/spacing_large" />
+
+    <TextView
+        android:id="@+id/txtDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:gravity="center_horizontal"
+        android:text="@string/play_initial_time"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCurrentMusic"
+        app:layout_goneMarginTop="@dimen/spacing_large" />
+
+    <ImageButton
+        android:id="@+id/btnRandom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/spacing_normal"
+        android:background="@null"
+        android:contentDescription="@string/description_shuffle_button"
+        app:layout_constraintBottom_toBottomOf="@id/btnPrev"
+        app:layout_constraintEnd_toStartOf="@id/view_stub"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:layout_constraintTop_toTopOf="@id/btnPrev"
+        app:layout_goneMarginEnd="@dimen/spacing_normal"
+        app:srcCompat="@drawable/ic_shuffle" />
+
+    <ImageButton
+        android:id="@+id/btnRandomIndicator"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginBottom="2dp"
+        android:background="@null"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/view_stub"
+        app:layout_constraintEnd_toStartOf="@id/view_stub"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:srcCompat="@drawable/ic_fiber_manual_record"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/view_stub"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:layout_constraintTop_toTopOf="@id/btnPrev" />
+
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:background="@null"
+        android:contentDescription="@string/description_play_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@id/view_stub"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:layout_constraintTop_toTopOf="@id/view_stub"
+        app:srcCompat="@drawable/ic_play" />
+
+    <ImageButton
+        android:id="@+id/btnRepeat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/spacing_normal"
+        android:background="@null"
+        android:contentDescription="@string/description_repeat_button"
+        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/view_stub"
+        app:layout_constraintTop_toTopOf="@id/btnNext"
+        app:layout_goneMarginStart="@dimen/spacing_normal"
+        app:srcCompat="@drawable/ic_repeat" />
+
+    <ImageButton
+        android:id="@+id/btnRepeatIndicator"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginBottom="2dp"
+        android:background="@null"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/view_stub"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/view_stub"
+        app:srcCompat="@drawable/ic_fiber_manual_record"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/btnRepeatOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/spacing_normal"
+        android:background="@null"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/view_stub"
+        app:layout_constraintTop_toTopOf="@id/btnNext"
+        app:layout_goneMarginStart="@dimen/spacing_normal"
+        app:srcCompat="@drawable/ic_repeat_one"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/btnPause"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:background="@null"
+        android:contentDescription="@string/description_play_button"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:srcCompat="@drawable/ic_pause" />
+
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:background="@null"
+        android:contentDescription="@string/description_next_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/ic_next" />
+
+    <ProgressBar
+        android:id="@+id/progressBarPlayer"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/view_stub"
+        app:layout_constraintEnd_toStartOf="@id/btnNext"
+        app:layout_constraintStart_toEndOf="@id/btnPrev"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@id/view_stub"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/btnPrev"
+        android:layout_width="@dimen/touch_default"
+        android:layout_height="@dimen/touch_default"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:background="@null"
+        android:contentDescription="@string/description_previous_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/ic_previous" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

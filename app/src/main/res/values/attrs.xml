@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JcPlayerView">
+        <attr name="text_audio_title_color" format="color" />
+        <attr name="text_audio_current_duration_color" format="color" />
+        <attr name="text_audio_duration_color" format="color" />
+        <attr name="seek_bar_color" format="color" />
+        <attr name="progress_color" format="color" />
+
+        <attr name="play_icon_color" format="color" />
+        <attr name="pause_icon_color" format="color" />
+        <attr name="next_icon_color" format="color" />
+        <attr name="previous_icon_color" format="color" />
+        <attr name="random_icon_color" format="color" />
+        <attr name="repeat_icon_color" format="color" />
+        <attr name="repeat_one_icon_color" format="color" />
+
+        <attr name="play_icon" format="reference" />
+        <attr name="pause_icon" format="reference" />
+        <attr name="next_icon" format="reference" />
+        <attr name="previous_icon" format="reference" />
+        <attr name="random_icon" format="reference" />
+        <attr name="repeat_icon" format="reference" />
+        <attr name="repeat_one_icon" format="reference" />
+
+        <attr name="show_random_button" format="boolean" />
+        <attr name="show_repeat_button" format="boolean" />
+
+    </declare-styleable>
+</resources>
