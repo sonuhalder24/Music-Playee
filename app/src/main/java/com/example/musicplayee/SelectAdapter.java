@@ -1,6 +1,7 @@
 package com.example.musicplayee;
 
 import android.content.Context;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,16 @@ import java.util.ArrayList;
 
 public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.SelectHolder>{
     ArrayList<Song> songs;
+    SparseBooleanArray sparseBooleanArray=new SparseBooleanArray();
     Context c;
-    public SelectAdapter(Context context, ArrayList<Song> song){
+    onCheckClicked onCC;
+    interface onCheckClicked{
+        void onCheckedItemClicked(SparseBooleanArray sba);
+    }
+    public SelectAdapter(Context context, ArrayList<Song> song,onCheckClicked onCheckClicked){
         this.c=context;
         this.songs=song;
+        this.onCC=onCheckClicked;
     }
 
     @NonNull
@@ -34,11 +41,23 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.SelectHold
     public void onBindViewHolder(@NonNull SelectHolder holder, int position) {
         holder.nameSelect.setText(songs.get(position).getSong_name());
         holder.aboutSelect.setText(songs.get(position).getSong_about());
+        holder.checkBox.setChecked(sparseBooleanArray.get(position));
         Glide.with(c).load(songs.get(position).getSong_image())
                 .error(R.drawable.default_image)
                 .placeholder(R.drawable.default_image)
                 .into(holder.imageSelect);
-
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(holder.checkBox.isChecked()){
+                    sparseBooleanArray.put(position,true);
+                }
+                else{
+                    sparseBooleanArray.put(position,false);
+                }
+                onCC.onCheckedItemClicked(sparseBooleanArray);
+            }
+        });
     }
 
     @Override
@@ -57,6 +76,7 @@ public class SelectAdapter extends RecyclerView.Adapter<SelectAdapter.SelectHold
             imageSelect=itemView.findViewById(R.id.imgSelect);
             nameSelect=itemView.findViewById(R.id.titleSelect);
             aboutSelect=itemView.findViewById(R.id.aboutSelect);
+
         }
     }
 }

@@ -74,6 +74,7 @@
                 android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="15dp"
@@ -92,7 +93,7 @@
                         android:alpha="0.9"
 
                         android:scaleType="centerInside"
-                        android:src="@drawable/ic_music_2" />
+                        app:srcCompat="@drawable/ic_music_2" />
 
                     <TextView
                         android:id="@+id/UserPlaylistText"
@@ -102,7 +103,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
-                        android:text="You"
+                        android:text="My Songs"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="20dp"
@@ -116,7 +117,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/add" />
+                    app:srcCompat="@drawable/add" />
 
             </LinearLayout>
         </LinearLayout>
