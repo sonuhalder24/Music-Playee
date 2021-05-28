@@ -4,14 +4,16 @@ public class User {
     private String userName;
     private String email;
     private String password;
+    private String checked;
 
     public User(){
 
     }
-    public User(String userName, String email, String password) {
+    public User(String userName, String email, String password,String checked) {
         this.userName = userName;
         this.email = email;
         this.password = password;
+        this.checked=checked;
     }
 
     public String getUserName() {
@@ -36,5 +38,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getChecked() {
+        return checked;
+    }
+
+    public void setChecked(String checked) {
+        this.checked = checked;
     }
 }

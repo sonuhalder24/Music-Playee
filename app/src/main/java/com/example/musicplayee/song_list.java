@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ public class song_list extends Fragment {
     ProgressBar progressBar;
     SongAdapter.ItemClicked itemClicked;
 
+
     private View listItemView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +38,7 @@ public class song_list extends Fragment {
         listItemView=inflater.inflate(R.layout.fragment_song_list, container, false);
         recyclerView=listItemView.findViewById(R.id.recyclerView);
         progressBar=listItemView.findViewById(R.id.progressBar);
+
         song= new ArrayList<>();
         itemClicked=new SongAdapter.ItemClicked() {
             @Override

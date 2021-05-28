@@ -8,7 +8,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,10 +35,13 @@ public class SongActivity extends AppCompatActivity {
     Fragment fragmentSong,fragmentAlbums;
     FragmentManager fm;
     FragmentTransaction ft1,ft2,ft3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
+
+
         songBut=findViewById(R.id.songBut);
         albumBut=findViewById(R.id.albumBut);
         imageHome=findViewById(R.id.imageHome);

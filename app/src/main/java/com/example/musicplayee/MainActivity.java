@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     FirebaseDatabase.getInstance().getReference("user/"+FirebaseAuth.getInstance().getCurrentUser().getUid())
                                             .setValue(new User(userName.getText().toString().trim(),
-                                            email.getText().toString().trim(),password.getText().toString().trim()));
+                                            email.getText().toString().trim(),password.getText().toString().trim(),"unchecked"));
                                     
                                     startActivity(new Intent(MainActivity.this,SongActivity.class));
                                     Toast.makeText(MainActivity.this, "Sign up successfully", Toast.LENGTH_SHORT).show();

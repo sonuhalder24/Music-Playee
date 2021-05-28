@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
@@ -29,12 +31,15 @@ public class SelectActivity extends AppCompatActivity {
     ArrayList<SelectElement>elements;
     SparseBooleanArray sparseBooleanArray1;
 
+
     Button select_button;
     SelectAdapter.onCheckClicked checkClicked;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
+
+
         recyclerView4=findViewById(R.id.recycler4);
         progressBar5=findViewById(R.id.progressBar5);
         select_button=findViewById(R.id.sel_button);

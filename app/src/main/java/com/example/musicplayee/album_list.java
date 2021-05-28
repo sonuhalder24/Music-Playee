@@ -1,5 +1,6 @@
 package com.example.musicplayee;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class album_list extends Fragment {
     ArrayList<DifferentPlaylist> diffAlbum;
     ArrayList<ArtistPlaylist>artistAlbum;
     ProgressBar progressBar,progressBar2;
+
     DifferentPlaylistAdapter differentPlaylistAdapter;
     ArtistPlaylistAdapter artistPlaylistAdapter;
     DifferentPlaylistAdapter.DifferentPlaylistItemClicked differentPlaylistItemClicked;
@@ -46,6 +48,7 @@ public class album_list extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         listItemView=inflater.inflate(R.layout.fragment_album_list, container, false);
+
         recyclerView=listItemView.findViewById(R.id.diffRecyclerView);
         recyclerView2=listItemView.findViewById(R.id.artistRecyclerView);
         imageAdd=listItemView.findViewById(R.id.add_btn);
