@@ -30,6 +30,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class SongActivity extends AppCompatActivity {
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     Button songBut,albumBut;
     ImageView imageHome,imageSearch,imageProfile;
     Fragment fragmentSong,fragmentAlbums;
@@ -40,7 +43,21 @@ public class SongActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
+        preferences=getSharedPreferences("checked",MODE_PRIVATE);
+        editor=preferences.edit();
+        FirebaseDatabase.getInstance().getReference("user/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/checked")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String sts=snapshot.getValue().toString();
+                        editor.putString("status",sts).commit();
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
         songBut=findViewById(R.id.songBut);
         albumBut=findViewById(R.id.albumBut);

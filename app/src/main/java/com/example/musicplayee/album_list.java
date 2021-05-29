@@ -41,7 +41,7 @@ public class album_list extends Fragment {
     ArtistPlaylistAdapter artistPlaylistAdapter;
     DifferentPlaylistAdapter.DifferentPlaylistItemClicked differentPlaylistItemClicked;
     ArtistPlaylistAdapter.ArtistPlaylistItemClicked artistPlaylistItemClicked;
-
+    SharedPreferences preferences;
 
     private View listItemView;
     @Override
@@ -49,12 +49,24 @@ public class album_list extends Fragment {
                              Bundle savedInstanceState) {
         listItemView=inflater.inflate(R.layout.fragment_album_list, container, false);
 
+        preferences=getContext().getSharedPreferences("checked",Context.MODE_PRIVATE);
+        String status=preferences.getString("status","unchecked");
+
         recyclerView=listItemView.findViewById(R.id.diffRecyclerView);
         recyclerView2=listItemView.findViewById(R.id.artistRecyclerView);
         imageAdd=listItemView.findViewById(R.id.add_btn);
         cardView=listItemView.findViewById(R.id.cardV);
         progressBar=listItemView.findViewById(R.id.progressBar1);
         progressBar2=listItemView.findViewById(R.id.progressBar2);
+        if(status.equals("checked")){
+            imageAdd.setImageResource(R.drawable.edit);
+            add_btnClick=1;
+        }
+        else {
+            imageAdd.setImageResource(R.drawable.add);
+            add_btnClick=0;
+        }
+
         diffAlbum=new ArrayList<>();
         artistAlbum=new ArrayList<>();
         differentPlaylistItemClicked=new DifferentPlaylistAdapter.DifferentPlaylistItemClicked() {
@@ -90,32 +102,29 @@ public class album_list extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(add_btnClick==0){
-//                    Toast.makeText(getContext(), "Add your playlist", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(add_btnClick==1){
+                if(add_btnClick==0){
+                    Toast.makeText(getContext(), "Add your playlist", Toast.LENGTH_SHORT).show();
+                }
+                else if(add_btnClick==1){
                     Intent intent=new Intent(getContext(),PlaylistActivity.class);
                     intent.putExtra("PlaylistName", FirebaseAuth.getInstance().getCurrentUser().getUid());
                     intent.putExtra("PlayImage",
                             "https://us.123rf.com/450wm/yusufdemirci/yusufdemirci1803/yusufdemirci180300346/97820259-vector-illustration-of-kids-making-art-performance.jpg?ver=6");
                     startActivity(intent);
-//                }
+                }
             }
         });
         imageAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getContext(), SelectActivity.class);
-                startActivity(intent);
-                if(add_btnClick==0) {
-                    add_btnClick = 1;
-                    imageAdd.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageAdd.setImageResource(R.drawable.edit);
-                        }
-                    },1000);
+                if(add_btnClick==0){
+                    Intent intent = new Intent(getContext(), SelectActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(getContext(), EditActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -168,5 +177,22 @@ public class album_list extends Fragment {
 
 
         return listItemView;
+    }
+
+    @Override
+    public void onResume() {
+        preferences=getContext().getSharedPreferences("checked",Context.MODE_PRIVATE);
+        String status=preferences.getString("status","unchecked");
+
+        if(status.equals("checked")){
+            imageAdd.setImageResource(R.drawable.edit);
+            add_btnClick=1;
+        }
+        else {
+            imageAdd.setImageResource(R.drawable.add);
+            add_btnClick=0;
+        }
+
+        super.onResume();
     }
 }

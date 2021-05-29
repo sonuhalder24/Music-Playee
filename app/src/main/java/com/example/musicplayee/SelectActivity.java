@@ -79,6 +79,8 @@ public class SelectActivity extends AppCompatActivity {
                                 .push().setValue(elements.get(i));
                     }
 
+                    FirebaseDatabase.getInstance().getReference("user/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+
+                            "/checked").setValue("checked");
                     Intent intent = new Intent(SelectActivity.this, SongActivity.class);
                     startActivity(intent);
 
