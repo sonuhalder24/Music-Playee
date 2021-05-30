@@ -45,15 +45,10 @@ A step-by-step series of instructions that tell you how to get the project runni
 
 ## App looks
 <img src="https://user-images.githubusercontent.com/66179464/120095335-05d8dc80-c143-11eb-9328-70205aefbbe4.jpg" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 <img src="https://user-images.githubusercontent.com/66179464/120095385-5f410b80-c143-11eb-90f6-b28dc159937f.jpg" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 <img src="https://user-images.githubusercontent.com/66179464/120095427-8dbee680-c143-11eb-9baa-22c0b3d92c28.jpg" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 <img src="https://user-images.githubusercontent.com/66179464/120095448-ab8c4b80-c143-11eb-8e5a-c0caad97e360.jpg" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 <img src="https://user-images.githubusercontent.com/66179464/120095477-cfe82800-c143-11eb-8f23-cf96c6382eaf.jpg" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 <img src="https://user-images.githubusercontent.com/66179464/120095493-ef7f5080-c143-11eb-84b8-580cf038e215.jpg" width="180" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Built with
