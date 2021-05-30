@@ -5,9 +5,10 @@
 ## Table of contents
 * [Description](#description)
 * [Using](#using)
-* [Getting Started](#getting_started)
-* [App looks](#app_looks)
-* [Built with](#built_with)
+* [Getting Started](#getting-started)
+* [App looks](#app-looks)
+* [Built with](#built-with)
+
 
 ## Description
 This project is simple music playing app where you play any one song or playlist or create your own playlist and then play it.Having music player, you feel relaxing.
