@@ -8,6 +8,7 @@
 * [Getting Started](#getting-started)
 * [App looks](#app-looks)
 * [Built with](#built-with)
+* [Author](#author)
 
 
 ## Description
@@ -58,7 +59,7 @@ A step-by-step series of instructions that tell you how to get the project runni
 - XML
 - Kotlin
 
-## Authors
+## Author
 
 <a href="https://github.com/sonuhalder24/Music-Playee/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sonuhalder24/Music-Playee" />
