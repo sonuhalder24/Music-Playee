@@ -1,4 +1,4 @@
-# 🎧 Music Playee
+# 🎧 Music Playee 🎧
 [![Contributors](https://img.shields.io/github/contributors/sonuhalder24/Music-Playee.svg)](https://github.com/sonuhalder24/Music-Playee/graphs/contributors) 
 
 🎵 🎵 Music Playee is a music player app.🎵 🎵
