@@ -2,9 +2,9 @@
 [![Contributors](https://img.shields.io/github/contributors/sonuhalder24/Music-Playee.svg)](https://github.com/sonuhalder24/Music-Playee/graphs/contributors) </br>
 [![Starts](https://img.shields.io/github/stars/sonuhalder24/Music-Playee)](https://github.com/sonuhalder24/Music-Playee/stargazers) 
 
-🎵 🎵 Music Playee is a music player app.🎵 🎵</br>
+🎵 🎵 Music Playee is a music player app.🎵 🎵 </br></br>
 __Project Views__(max): 69
-__Clones__(max):9</br></br>
+__Clones__(max):9</br>
 ## Table of contents
 * [Description](#description)
 * [Using](#using)
