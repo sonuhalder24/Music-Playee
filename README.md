@@ -1,7 +1,10 @@
 # 🎧 Music Playee 🎧
-[![Contributors](https://img.shields.io/github/contributors/sonuhalder24/Music-Playee.svg)](https://github.com/sonuhalder24/Music-Playee/graphs/contributors) 
+[![Contributors](https://img.shields.io/github/contributors/sonuhalder24/Music-Playee.svg)](https://github.com/sonuhalder24/Music-Playee/graphs/contributors) </br>
+[![Starts](https://img.shields.io/github/stars/sonuhalder24/Music-Playee)](https://github.com/sonuhalder24/Music-Playee/stargazers) 
 
-🎵 🎵 Music Playee is a music player app.🎵 🎵
+🎵 🎵 Music Playee is a music player app.🎵 🎵</br>
+__Project Views__(max): 69
+__Clones__(max):9</br></br>
 ## Table of contents
 * [Description](#description)
 * [Using](#using)
